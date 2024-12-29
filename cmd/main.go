@@ -7,10 +7,14 @@ type Task struct {
 	UpdatedAt string `json:"updated_at"`
 }
 
+func (t *Task) Create() {
+	println("Create Task")
+}
+
 func main() {
 	println("Hello World")
 
-	var sample_task = Task{ID: "1", Title: "Sample", CreatedAt: "Today", UpdatedAt: "Today"}
+	var sample_task = &Task{ID: "1", Title: "Sample", CreatedAt: "Today", UpdatedAt: "Today"}
 
 	println(sample_task.ID, sample_task.Title)
 }
